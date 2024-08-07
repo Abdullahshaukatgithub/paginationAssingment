@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Table Operations</title>
+    <style>
+        .scrollable-container {
+            border: 1px solid #ccc;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px; 
+            background-color: #f2f2f2;
+            
+        }
+        .recordTable {
+            width: 100%;
+        }
+        input[type=text], select, input[type=email], input[type=tel] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+        .tabel1 {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        button[type=button] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type=button]:hover {
+            background-color: #45a049;
+        }
+
+
+        .search-container {
+            margin-bottom: 100px;
+        }
+        .footer{
+            margin-top: 5px;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* button.active{
+            background-color:linear-gradient(to bottom,#45a049 0%);
+        } */
+        /* button{
+            padding: 7px 15px;
+            font-size: 15px;
+            background-color: #ccc;
+        } */
+    </style>
+</head>
+<body>
+    <h1>Employee Records Table</h1>
+    <div class="scrollable-container">
+        <div class="tabel1">
+            <form id="recordForm">
+                <input type="hidden" id="editIndex" value="-1">
+                <label>First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter name" required>
+                
+                <label>Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+    
+                <label>Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email" required>
+    
+                <label>Phone Number</label>
+                <input type="tel" id="phoneNumber" name="Phone" placeholder="Enter number">
+                
+                <button type="submit">Save Data</button>
+            </form>
+        </div>
+
+
+        <div class="search-bar">
+            <label for="searchInput">Search:</label>
+            <input type="text" id="searchInput" placeholder="Search records">
+        </div>
+
+        <div>
+            <table id="recordTable" class="recordTable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            <span>Showing 1 to 5 Entries</span>
+            <div class="index_button">
+                
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>Next</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
